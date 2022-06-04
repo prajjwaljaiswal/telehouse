@@ -24,7 +24,7 @@ const Home = () => {
    
           <Card title="Welcome To TeleHouse !">
             <p className={styles.text}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, dolores, sapiente sint dicta iusto illo magni nesciunt rem itaque aliquid odit reiciendis eveniet eligendi a necessitatibus dolor officia facere eos!
+              We're working hard to get TeleHouse ready for everyone While we wrap up the finishing youches, we're adding people gradually to make sure nothing breaks
             </p>
 
             <div>
