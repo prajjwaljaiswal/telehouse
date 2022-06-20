@@ -16,12 +16,12 @@ const Phone = ({onNext}) => {
       const { data } = await sendOtp({phone: phoneNumber});
 
       dispatch(setOtp({phone: data.phone, hash: data.hash}));
-      // onNext();
+      onNext();
   }
 
   return (
         <Card title="Enter Your Phone number" icon="phone">
-          
+           
         <TextInput value={phoneNumber} onChange={(e) => { setPhoneNumber(e.target.value) }} />
 
         <div>

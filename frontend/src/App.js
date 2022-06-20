@@ -6,12 +6,9 @@ import { Redirect } from 'react-router-dom';
 import Authenticate from './pages/authenticate/Authenticate';
 import Activate from './pages/Activate/Activate';
 import Rooms from './pages/Rooms/Rooms';
+import { useSelector } from 'react-redux';
 
-const isAuth = false;
 
-const user = {
-    activated : false
-}
 function App() {
     return (
         <BrowserRouter>
@@ -39,9 +36,10 @@ function App() {
 }
 
 const GuestRoute = ({children, ...rest}) => {
-    //
-
-
+   
+    const { isAuth }  = useSelector((state) => {
+        return state.auth;
+    });
 
     return (
         <Route {...rest}
@@ -64,6 +62,11 @@ const GuestRoute = ({children, ...rest}) => {
 
 
 const SemiProtectedRoute = ({children, ...rest}) => {
+
+    const { user, isAuth }  = useSelector((state) => {
+        return state.auth;
+    });
+
     return (
         <Route {...rest}
         render={({location}) => {
@@ -89,6 +92,11 @@ const SemiProtectedRoute = ({children, ...rest}) => {
 
 
 const ProtectedRoute = ({children, ...rest}) => {
+
+    const { user, isAuth }  = useSelector((state) => {
+        return state.auth;
+    });
+
     return (
         <Route {...rest}
         render={({location}) => {
